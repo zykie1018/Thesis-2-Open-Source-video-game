@@ -277,10 +277,10 @@ namespace RedRunner.Characters
 
 		void Update ()
 		{
-			if ( !GameManager.Singleton.gameStarted || !GameManager.Singleton.gameRunning )
-			{
-				return;
-			}
+			// if ( !GameManager.Singleton.gameStarted || !GameManager.Singleton.gameRunning )
+			// {
+			// 	return;
+			// }
 
 			if ( transform.position.y < 0f )
 			{
@@ -424,10 +424,10 @@ namespace RedRunner.Characters
 			if ( !IsDead.Value )
 			{
 				float speed = m_CurrentRunSpeed;
-//				if ( CrossPlatformInputManager.GetButton ( "Walk" ) )
-//				{
-//					speed = m_WalkSpeed;
-				//				}
+				if ( CrossPlatformInputManager.GetButton ( "Walk" ) )
+				{
+					speed = m_WalkSpeed;
+								}
 				Vector2 velocity = m_Rigidbody2D.velocity;
 				velocity.x = speed * horizontalAxis;
 				m_Rigidbody2D.velocity = velocity;

@@ -94,10 +94,10 @@ namespace RedRunner.Utilities
 				m_Stopped = false;
 			}
 
-			if (m_CurrentPoint == null || m_CurrentPoint.Current == null || m_Stopped || !GameManager.Singleton.gameRunning) {
-				return;
-			}
-
+			// if (m_CurrentPoint == null || m_CurrentPoint.Current == null || m_Stopped || !GameManager.Singleton.gameRunning) {
+			// 	return;
+			// }
+			
 			float speed = Time.deltaTime * m_CurrentPoint.Current.speed;
 			if (m_CurrentPoint.Current.moveType == PathPoint.MoveType.MoveTowards) {
 				transform.position = Vector3.MoveTowards (transform.position, m_CurrentPoint.Current.transform.position, speed);
